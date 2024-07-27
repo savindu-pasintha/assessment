@@ -4,10 +4,11 @@
   "description": "",
   "author": "",
   "license": "ISC",
+  "main": "index.js",
+  "type": "commonjs",
   "engines": {
     "node": "^18.0.0"
   },
-  "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "dev": "nodemon index.js",

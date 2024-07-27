@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const { swaggerMiddleware, swaggerDocs } = require('./swagger');
 const logger = require('./logger');
 const sequelize = require('./sequalizeDB');
+const routes = require('./routes');
 
 const app = express();
 
@@ -14,7 +15,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors({ origin: process.env.FRONTEND_IP || '*' }));
 app.use(cookieParser());
 
-app.use('/doc', swaggerMiddleware, swaggerDocs);
+app.use('/v1/apis/doc/', swaggerMiddleware, swaggerDocs);
+app.use('/v1/apis/',routes)
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
