@@ -6,7 +6,7 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color='info'>
       <Toolbar>
         <Container maxWidth="md" sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Typography variant="h6">

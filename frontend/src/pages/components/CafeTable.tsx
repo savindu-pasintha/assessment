@@ -5,12 +5,26 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { fetchCafesRequest } from "../../store/actions";
+import { SImage } from "./StyledComponents";
+import CellActionsRender from "./CellActionsRender";
+import AddIcon from "@mui/icons-material/Add";
+import {
+  fetchCafesRequest,
+  addCafeRequest,
+  updateCafeRequest,
+  deleteCafeRequest,
+} from "../../store/actions";
+import { AlertDialog } from "./AlertDialog";
 
 const CafeTable = () => {
   const { cafes } = useSelector((state: { cafes: any }) => state.cafes);
   const dispatch = useDispatch();
   const [clickedCount, setClickedCount] = useState(0);
+
+  const [open, setOpen] = useState(false);
+  const [id, setId] = useState<number | string | null >(0);
+
+  const isOpen = useMemo(() => open, [open]);
 
   const rowData = useMemo(
     () =>
@@ -35,52 +49,39 @@ const CafeTable = () => {
     [cafes]
   );
 
-  const [columnDefs] = useState([
-    {
-      headerName: "Logo",
-      field: "logo",
-      cellRendererFramework: (params) => <img src={params.value} alt="logo" />,
-    },
-    { headerName: "Name", field: "name" },
-    { headerName: "Description", field: "description" },
-    { headerName: "Employees", field: "employees" },
-    { headerName: "Location", field: "location" },
-    {
-      headerName: "Actions",
-      field: "actions",
-      cellRendererFramework: (params) => (
-        <Box display="flex" justifyContent="center" alignItems="center">
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => handleEdit(params.data)}
-            style={{ marginRight: "8px" }}
-          >
-            Edit
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => handleDelete(params.data)}
-          >
-            Delete
-          </Button>
-        </Box>
-      ),
-    },
-  ]);
-
-  const handleEdit = (data) => {
-    console.log("Edit row:", data);
-  };
-
-  const handleDelete = (data) => {
-    console.log("Delete row:", data);
-  };
-
-  useEffect(() => {
-    dispatch(fetchCafesRequest("singapore"));
-  }, []);
+  const columnDefs = useMemo(
+    () => [
+      {
+        headerName: "Logo",
+        field: "logo",
+        editable: true,
+        cellRenderer: (params: any) => <SImage src={params.value} alt="" />,
+      },
+      { headerName: "Name", field: "name", filter: true, editable: true },
+      { headerName: "Description", field: "description", editable: true },
+      { headerName: "Employees", field: "employees", editable: true },
+      { headerName: "Location", field: "location", editable: true },
+      {
+        headerName: "Actions",
+        field: "actions",
+        cellRenderer: (params: any) => (
+          <CellActionsRender
+            handleClear={() => {
+              setId(params?.data?.id);
+              setOpen(true);
+            }}
+            handleSave={() => {
+              dispatch(updateCafeRequest(params?.data?.id, params?.data));
+            }}
+            handleEdit={() => {
+              console.log("e", params?.data);
+            }}
+          />
+        ),
+      },
+    ],
+    []
+  );
 
   const onCellClicked = () => setClickedCount((pre) => pre + clickedCount);
   const onFilterOpened = useCallback(() => {
@@ -89,18 +90,38 @@ const CafeTable = () => {
   const onCellValueChanged = useCallback(() => {
     console.log(`number of clicks is ${clickedCount}`);
   }, []);
+  const handleDelete = (id: string|number|null) => {
+    id && dispatch(deleteCafeRequest(id));
+    setOpen(false);
+    setId(null);
+  };
+
+  useEffect(() => {
+    dispatch(fetchCafesRequest("singapore"));
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ my: 2 }}>
         <Button
           variant="contained"
-          color="primary"
-          onClick={() => console.log("Add New Cafe")}
+          color="error"
+          onClick={() => {
+            dispatch(
+              addCafeRequest({ name: "New Cafe", location: "Singapore" })
+            );
+          }}
         >
-          Add New Cafe
+          <AddIcon /> New Cafe
         </Button>
       </Box>
       <Box className="ag-theme-alpine" sx={{ height: 400, width: "100%" }}>
+        <AlertDialog
+          isOpen={isOpen}
+          handleClose={() => setOpen(false)}
+          handleDelete={() => handleDelete(id)}
+          id={id}
+        />
         <AgGridReact
           rowData={rowData}
           columnDefs={columnDefs}
