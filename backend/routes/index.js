@@ -53,8 +53,8 @@ const router = express.Router();
 router.get('/cafes', (req, res) => {
   // Mock response
   res.json([
-    { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 },
-    { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5 }
+    { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 ,logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Starbucks_Coffee_Logo.svg/1200px-Starbucks_Coffee_Logo.svg.png"},
+    { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5,logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Starbucks_Coffee_Logo.svg/1200px-Starbucks_Coffee_Logo.svg.png" }
   ]);
 });
 
