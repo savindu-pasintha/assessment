@@ -15,6 +15,7 @@ import {
   deleteCafeRequest,
 } from "../../store/actions";
 import { AlertDialog } from "./AlertDialog";
+import CafeForm from "./Forms/CafeForm";
 
 const CafeTable = () => {
   const { cafes } = useSelector((state: { cafes: any }) => state.cafes);
@@ -107,9 +108,8 @@ const CafeTable = () => {
           variant="contained"
           color="error"
           onClick={() => {
-            dispatch(
-              addCafeRequest({ name: "New Cafe", location: "Singapore" })
-            );
+            setId(null)
+            setOpen(true)
           }}
         >
           <AddIcon /> New Cafe
@@ -121,6 +121,14 @@ const CafeTable = () => {
           handleClose={() => setOpen(false)}
           handleDelete={() => handleDelete(id)}
           id={id}
+          formType="New Cafe"
+          FormComponent={<CafeForm 
+            cafeData={{}}
+            onCancel={()=>{setId(null);setOpen(false)}} 
+            onSubmit={(data:any)=>{
+              dispatch(addCafeRequest(data));
+              setOpen(false);
+          }}/>}
         />
         <AgGridReact
           rowData={rowData}

@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 export const AlertDialog = (props: any) => {
-  const { handleDelete, handleClose, isOpen,id } = props;
+  const { handleDelete, handleClose, isOpen,id , formType , FormComponent } = props;
 
   return (
     <React.Fragment>
@@ -18,17 +18,19 @@ export const AlertDialog = (props: any) => {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          Are you sure you want to delete this, record ?
-        </DialogTitle>
+          { id && "Are you sure you want to delete this, record ?"}
+          {FormComponent && formType && formType}         
+       </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description"> Id = {id && id}</DialogContentText>
-        </DialogContent>
-        <DialogActions>
+          { id && <DialogContentText id="alert-dialog-description">Id = {id && id} </DialogContentText>}
+          {formType && FormComponent}
+       </DialogContent>
+       { id && <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleDelete} autoFocus>
             Delete
           </Button>
-        </DialogActions>
+        </DialogActions>}
       </Dialog>
     </React.Fragment>
   );

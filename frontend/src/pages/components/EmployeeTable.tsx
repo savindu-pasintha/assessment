@@ -14,18 +14,19 @@ import {
   deleteEmployeeRequest,
 } from "../../store/actions";
 import { AlertDialog } from "./AlertDialog";
+import EmployeeForm from "./Forms/EmployeeForm";
 
 const EmployeeTable = () => {
-  const { employees } = useSelector(
-    (state: { employees: any }) => state.employees
-  );
+  const { employees :{employees},cafes:{cafes} } = useSelector((state: { employees: any,cafes:any }) => state);
+  
   const dispatch = useDispatch();
+
   const [clickedCount, setClickedCount] = useState(0);
 
   const [open, setOpen] = useState(false);
-  const [id, setId] = useState<string|number|null>(0);
+  const [id, setId] = useState<string | number | null>(0);
 
-  const isOpen = useMemo(()=>open,[open])
+  const isOpen = useMemo(() => open, [open]);
 
   const rowData = useMemo(
     () =>
@@ -64,8 +65,8 @@ const EmployeeTable = () => {
         cellRenderer: (params: any) => (
           <CellActionsRender
             handleClear={() => {
-              setId(params?.data?.id)
-              setOpen(true)
+              setId(params?.data?.id);
+              setOpen(true);
             }}
             handleSave={() => {
               dispatch(updateEmployeeRequest(params?.data?.id, params?.data));
@@ -88,16 +89,16 @@ const EmployeeTable = () => {
     console.log(`number of clicks is ${clickedCount}`);
   }, []);
 
-  const handleDelete = (id:string|number|null)=>{
+  const handleDelete = (id: string | number | null) => {
     id && dispatch(deleteEmployeeRequest(id));
-    setOpen(false)
-    setId(null)
-  }
+    setOpen(false);
+    setId(null);
+  };
 
   useEffect(() => {
     dispatch(fetchEmployeesRequest("cafe1"));
   }, []);
- 
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ my: 2 }}>
@@ -105,22 +106,34 @@ const EmployeeTable = () => {
           variant="contained"
           color="error"
           onClick={() => {
-            console.log("Add New Employee");
-            dispatch(
-              addEmployeeRequest({
-                name: "John Doe",
-                email: "john.doe@example.com",
-                phone: "91234567",
-                cafeId: 1,
-              })
-            );
+            setId(null);
+            setOpen(true);
           }}
         >
           <AddIcon /> New Employee
         </Button>
       </Box>
       <Box className="ag-theme-alpine" sx={{ height: 400, width: "100%" }}>
-       <AlertDialog isOpen={isOpen} handleClose={()=>setOpen(false)} handleDelete={()=>handleDelete(id)} id={id}/>
+        <AlertDialog
+          isOpen={isOpen}
+          handleClose={() => setOpen(false)}
+          handleDelete={() => handleDelete(id)}
+          id={id}
+          formType={"New Employee"}
+          FormComponent={
+            <EmployeeForm
+              employeeData={{}}
+              cafes={cafes}
+              onSubmit={(data:any) => {
+                dispatch(
+                  addEmployeeRequest(data)
+                );
+                setOpen(false);
+              }}
+              onCancel={()=>setOpen(false)}
+            />
+          }
+        />
         <AgGridReact
           rowData={rowData}
           columnDefs={columnDefs}
