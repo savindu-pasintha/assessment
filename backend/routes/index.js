@@ -1,6 +1,7 @@
+require('dotenv').config()
 const express = require("express");
 const router = express.Router();
-const { sample_error, sample_success } = require("../utilities");
+const {sample_error,sample_success} = require("../utilities");
 const { EmployeeTable, CafeTable, sequelize } = require("../db/index");
 const logger = require("../logger");
 
@@ -135,7 +136,7 @@ router.get("/cafes", async (req, res) => {
 router.get("/employees", async (req, res) => {
   try {
     const cafeName = req.query.cafe;
-   const query = `
+    const query = `
       SELECT e.*, c.name AS cafe
       FROM Employees e
       INNER JOIN Employments em ON e.id = em.EmployeeId

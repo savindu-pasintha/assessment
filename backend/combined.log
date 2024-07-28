@@ -272,3 +272,176 @@
 2024-07-28 15:41:15 [32minfo[39m : Database connection has been established successfully.
 2024-07-28 15:41:16 [32minfo[39m : Database & tables created or updated!
 2024-07-28 15:41:16 [32minfo[39m : Listening on port 5001
+2024-07-28 19:41:09 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:41:10 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:41:10 [32minfo[39m : Listening on port 5001
+2024-07-28 19:47:15 [31merror[39m : 404 - Page not found
+2024-07-28 19:48:37 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:48:38 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:48:38 [32minfo[39m : Listening on port 5001
+2024-07-28 19:49:35 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:49:36 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:49:36 [32minfo[39m : Listening on port 5001
+2024-07-28 19:50:14 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:50:15 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:50:15 [32minfo[39m : Listening on port 5001
+2024-07-28 19:50:26 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:50:27 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:50:27 [32minfo[39m : Listening on port 5001
+2024-07-28 19:51:10 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:51:11 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:51:11 [32minfo[39m : Listening on port 5001
+2024-07-28 19:51:18 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:51:19 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:51:19 [32minfo[39m : Listening on port 5001
+2024-07-28 19:54:38 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:54:39 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:54:39 [32minfo[39m : Listening on port 5001
+2024-07-28 19:57:23 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:57:24 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:57:24 [32minfo[39m : Listening on port 5001
+2024-07-28 19:57:41 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:57:42 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:57:42 [32minfo[39m : Listening on port 5001
+2024-07-28 19:58:10 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:58:11 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:58:11 [32minfo[39m : Listening on port 5001
+2024-07-28 19:58:48 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:58:49 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:58:49 [32minfo[39m : Listening on port 5001
+2024-07-28 19:58:55 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:58:56 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:58:56 [32minfo[39m : Listening on port 5001
+2024-07-28 19:59:29 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 19:59:30 [32minfo[39m : Database & tables created or updated!
+2024-07-28 19:59:30 [32minfo[39m : Listening on port 5001
+2024-07-28 20:01:53 [31merror[39m : Unable to connect to the database: Cryptr is not defined
+2024-07-28 20:04:03 [31merror[39m : Unable to connect to the database: Cryptr: secret must be a non-0-length string
+2024-07-28 20:04:58 [32minfo[39m : c2157059bcc62bfe27035c47a2dcabea5cba66f6f06944eece03dd1728c11888b58e6d03fc18f917955c8b5ac747d10e9bec1d2894cb25da9a37064023aadf6f24d1366803494310eda722184d92da9823f9b935bae02a5dd58df8bc106ac997483ce00fcb30
+2024-07-28 20:05:00 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:05:01 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:05:01 [32minfo[39m : Listening on port 5001
+2024-07-28 20:05:31 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:05:32 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:05:32 [32minfo[39m : Listening on port 5001
+2024-07-28 20:06:17 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:06:18 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:06:18 [32minfo[39m : Listening on port 5001
+2024-07-28 20:06:44 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:06:45 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:06:45 [32minfo[39m : Listening on port 5001
+2024-07-28 20:06:51 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:06:52 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:06:52 [32minfo[39m : Listening on port 5001
+2024-07-28 20:07:16 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:07:17 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:07:17 [32minfo[39m : Listening on port 5001
+2024-07-28 20:07:42 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:07:43 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:07:43 [32minfo[39m : Listening on port 5001
+2024-07-28 20:08:25 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:08:26 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:08:26 [32minfo[39m : Listening on port 5001
+2024-07-28 20:08:35 [32minfo[39m : bda68b5798dff3fecd992fbe374042f942f50f57dcbe3d33d103042d0d6ed0399bad5f83fe69270c31c244f4ae4a39813a8332c7990b6bcfa62a9e3c2c03436a808dcb773977fb9c869b7b5aaedd0700427057e7097ee79443f9f2533f12f97e2aef201f2ac62e
+2024-07-28 20:08:58 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:08:59 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:08:59 [32minfo[39m : Listening on port 5001
+2024-07-28 20:09:04 [32minfo[39m : 035b28b16dc0bab928192cb791286feecbe63f5ad30d188d8f6105fafea1899a9c685864710bdaebe02ebd2f977538a9986a5aef9c0d4491a16c4c6f8c52434dc52c6c6b0ed02fdfd5d28be5976c94282e05f8efb9b5b913c47f46b5ec936d116f5498c006d6d3
+2024-07-28 20:09:04 [32minfo[39m : db020ab99522ab427e08c8e755e580447c31b6a158214c7d059e665b647164b343b85369d718037bb0ef0d0bc22d18e9c4f94e81a14ae3f901e2130e38faf63a8f1d1d9744e190a7869a0a2fcc1e4bd3b4d1f0d6a592db7f26381d19b3dc91cbdba3f834c9c52b
+2024-07-28 20:09:26 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:09:27 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:09:27 [32minfo[39m : Listening on port 5001
+2024-07-28 20:09:33 [32minfo[39m : 8840c54bf0b62ad4c99421ed2a5b391af5014df84fe05973ef00e101afa831383cf56641ed5ce353fe51c1b38680093ea3814457abe587cb140b44c19e5cf9d88f26dadbc0b8c688144df507aa9c1eab4cb774f90a7af21822c368fda830e7c1c2bb33b3477c00
+2024-07-28 20:09:33 [32minfo[39m : f647315eb9555c49ad1e2f232183b4dc9aa9128b924642492f97a9872e2ce29345e98317ba6fb5b6cb805d11cb63319f4a7aed11c8c5febb5c137442516b8291dba71df7c1a4d38a9bca8b6e4318bd94a0621fcd39831f7fedb69b79d2a5fd7215b706b5a31dfcde18b42d546dedb8b28acefde9c48a90a990daf286a2cc05730c66e0bb424bf84e73f327b4f6f5066e42df2789bcccbb16b8289a55b4750f3e86bab6bd0dea902742b3c65e55fde5b3840796f4265f1d9066e1abf568d1939ad85fb427a7465a2da6cf7a9f0c176ff8612e9f5a58c94621de111e14d9e37cdfda95548fb55243cef59965b1d7d7aa1a90882c5060375a60cba3d12f9efcf394fd6aa7e0fd3e9901d19eda72dc5f17eae23251dd543a7aabfda7862aad56e9fb2b93015338605683cd0ec53e627e
+2024-07-28 20:10:24 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:10:25 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:10:25 [32minfo[39m : Listening on port 5001
+2024-07-28 20:10:29 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:10:30 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:10:30 [32minfo[39m : Listening on port 5001
+2024-07-28 20:10:44 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:10:45 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:10:45 [32minfo[39m : Listening on port 5001
+2024-07-28 20:11:07 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:11:10 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:11:11 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:11:11 [32minfo[39m : Listening on port 5001
+2024-07-28 20:11:24 [32minfo[39m : 399020ea8d7334940be603a85073cdb06505cf36526b924411a51301cd71b03df02ebd38ed6d273f63958b7aaa545622a1e9bb442dca314890d79ae8019af88fc16c4a90c529888bf5c5547a190a65efcd39a35e92753b1cb2b213346d50a1d6fc9e2c90a51e9d
+2024-07-28 20:11:24 [32minfo[39m : 2154545
+2024-07-28 20:12:43 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:12:44 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:12:44 [32minfo[39m : Listening on port 5001
+2024-07-28 20:16:44 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:16:45 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:16:45 [32minfo[39m : Listening on port 5001
+2024-07-28 20:17:34 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:17:35 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:17:35 [32minfo[39m : Listening on port 5001
+2024-07-28 20:18:13 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:18:14 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:18:14 [32minfo[39m : Listening on port 5001
+2024-07-28 20:18:36 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:18:37 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:18:37 [32minfo[39m : Listening on port 5001
+2024-07-28 20:19:11 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:19:12 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:19:12 [32minfo[39m : Listening on port 5001
+2024-07-28 20:19:53 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:19:54 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:19:54 [32minfo[39m : Listening on port 5001
+2024-07-28 20:21:20 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:21:21 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:21:21 [32minfo[39m : Listening on port 5001
+2024-07-28 20:21:28 [32minfo[39m : n 
+2024-07-28 20:21:28 [32minfo[39m : u 
+2024-07-28 20:21:29 [32minfo[39m : pw 
+2024-07-28 20:21:29 [32minfo[39m : h 
+2024-07-28 20:21:29 [32minfo[39m : t 
+2024-07-28 20:21:29 [32minfo[39m : p
+2024-07-28 20:21:48 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:21:49 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:21:49 [32minfo[39m : Listening on port 5001
+2024-07-28 20:21:52 [32minfo[39m : 740c81c7f1d039cf7d85f104be3e25d3aaa6b30c4458e89fac03d7def32541cc4778bc23e0462a688da7d0bb4c3a1273eb23ac7df0217eb8e58552d7704554e848f013841a7faf0033416c26db59e7acfe7c6ed187490a027ba03394fbe3eae3995dc10911679dce2bc591d8e173bd
+2024-07-28 20:21:52 [32minfo[39m : u 
+2024-07-28 20:21:52 [32minfo[39m : pw 
+2024-07-28 20:21:52 [32minfo[39m : h 
+2024-07-28 20:21:52 [32minfo[39m : t 
+2024-07-28 20:21:52 [32minfo[39m : p
+2024-07-28 20:22:25 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:22:26 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:22:26 [32minfo[39m : Listening on port 5001
+2024-07-28 20:22:36 [32minfo[39m : 692a7bd4526d3dda25d669370507388fc1e0eb936021339746ec7238261f9ad344259ccc8e3770b2573533ae9a1cb9b1a23f1bb65fb2290759e4d152cfdead71b34a5bb25b9ba4a64335c8785a7f12969601095c851a3728a18a4aa2b94a2d73f632e2b92780888ad662fc9d9d99c6
+2024-07-28 20:22:36 [32minfo[39m : 1f6b11cb2a31543dce686e0a57398cd77bc465956dc5da82ebf6e6f71a79cef35adcb0157d1b13b97c1c17edecaefadd98470d5d1d7c6a0a56be884b5e7f4492ee22f7cdc8246bcf536f9a85ef74f43e4e4bb0eb75c411e1f643dfee32f81fcab2f4a09274ee08bb
+2024-07-28 20:22:36 [32minfo[39m : 85fc0b3b94c2cb1631a4e5ced09fbc3a9de04a32aafc4826d88432b0409c7738062357335ed8ff066e52b8d643ecfdfcc61e4042525768458eb2a6c69cff0a0ff3bbb45dfe674e26a276c7c5450c5b03c78badfde0bf00a08135f1d4fad34c2b8349ff713397df77
+2024-07-28 20:22:36 [32minfo[39m : c06d1f984cc5dfdfa3d2ff094a2e5d27e29e303694419f5c7194dca7473f7f8ad2e30bf3899194597f3ef9bfe71ae1167e65ce2bb0d0df5f2f0d5291083eb0215d2151e5f6d02ad648be6c0a32e5a991d96727a3dabc45c2ff3441e5b6d314f2c2f8c742e0ddf19dcac2dd4b5df8
+2024-07-28 20:22:36 [32minfo[39m : d90ee907a7590bdd4ac8573685555c340d318bca754400288cef1f2f3fbb15882b8b862747a7681e6117e718c0282f74205ad9e434cfd347ba1d05a5ae4fe1260a44c89061fa3a25624471632d72ed7964dd26827cc9fd4990f7c7fa64421bc6a007b54a52
+2024-07-28 20:22:36 [32minfo[39m : 330d52cee1043273511fc28dcee4f9b71004e0475dba60bc5646eb5e0d7f1cd502762d930896f395112ae67f186b2a81f4ee930c02b18063d1cef9b42668155f357bf73ce4b9041f6d993193163fc2c128c37ecd9f94b9c5fe4ed6725892f214bb58935e
+2024-07-28 20:25:57 [31merror[39m : Unable to connect to the database: getaddrinfo ENOTFOUND c06d1f984cc5dfdfa3d2ff094a2e5d27e29e303694419f5c7194dca7473f7f8ad2e30bf3899194597f3ef9bfe71ae1167e65ce2bb0d0df5f2f0d5291083eb0215d2151e5f6d02ad648be6c0a32e5a991d96727a3dabc45c2ff3441e5b6d314f2c2f8c742e0ddf19dcac2dd4b5df8
+2024-07-28 20:27:06 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:27:07 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:27:07 [32minfo[39m : Listening on port 5001
+2024-07-28 20:27:37 [32minfo[39m : 7b0fa39f4dffa9c41dc78424cd457e89b69bdcc114f272641372954e8f57da23dacc031edf286f26c2d06246ef661bf64673d68452f2c58aba4fec812bf04dfd97f3226b157509ddecf38ef68ee10707e520fdccd172e98264d0fcc740a2b2bbc7f23804c3bbdc815f0ef7b6951a23ce78bfc2c3d0016eb0051e9cca2d381561066960e0acdef8dc91719ec02296b624aa393507c674fec8e184e6f3b1d1188ffcd2e98acdb4f7dbe7ac12a878dfb0c4e8e90288a41225c2fc76de72e5509add4100307ff5b30ef54a231b32c1376d58531773a5311229abfd717d219844b5636dae1c56cddd0458aa81559a8b62d849bd6b1118590c4e7d42b52e14421b3541021e8f81cfb34b2b4b38c05676224e2d0785883863c2edddf9c311d855dcb5f984f565861af715e27dfed4aba637edfacba835e21db3e5a26c5e6d1534c8
+2024-07-28 20:27:37 [32minfo[39m : 5e03823a931aa1e0984f39eccf85bed9775b9e111d6f3bec39d93ff1c5c75414a3975764e8d7f2056abf7494fb6dd1c2e0f9aa3fa84bb9d1611e0d1c08b1a06cddca4a15c58d6c081d94a154d9df0f033e2ce8dc43c51b7db568fe91d891ed3660d3bacbd0608e1cf8b07b41added529f301ec3279886d1b0514b4ecbdf3d2acde4f169a6a4d2126035360b73b1b0108f5b1ad6c4ab57591c0223d2e531e29aafbe1502bbe2fc8084aff1fe4ce91ed1701095e6af0aaed69ff6fc7db463020257dfcf64cd192ebc42bef313ee46ff328e979ea962a4ee3e774156539aff20c7aebb1519c8f66193430c7dbd7f7f3d6a33ecee9903ef95c9792ef2bef62b2b0de9ee0a1e3f77afed6733208cc2a3c580dc822bdc1de5a553b05a4d0eed3b82b10a2c771f81be49a865d8cdb56d34fb95c
+2024-07-28 20:27:37 [32minfo[39m : 29b6d9499f5edc0c6432ed7b2764d303bb5a5fcfa973e45807a145c41a26d39f0b30eb6192fb2b033dab8c31b43589f37b9770fe3f5c0676cee039d0a1282e33e34a22f20ae1d68c9c24be7d7db7f62d2947a8d80933cb2645db2f6054d927b42b142bbe83c73733f826a66e193934a48bd42f11e61e8cf15bbfd5d6290c0b4d2893f80b72eb9830a7ef09063d2d59efa2279d4df3cd58fb92c4123929c73600b732380888fa00e3f572c9c3ef9c68c8489a46240e9df67c0b0e387d3215e26cf40356162d3d4068b53f13cecff59804d072efc0581cbd763323d5d936dd63d3be56345a875348e01bc4d69c358a9a05142eb71676e8c11e59e2ef9500da08318afd78124ea7f6222b49fa0875ece18b27a5ac91589bb18825a7101e54cab73283f0516aeeca341b7cade715b31b9c6b
+2024-07-28 20:27:37 [32minfo[39m : 263a5da5c1e13156e120797a8ff10fe37329e99b1a817ad9a1f3a11026a8e87e1e2599b5a2dc3a81bb51fa74b5d6d97e2558d38663508e2ef36cb7ebee827d5d28761e564d6f548a2e5bde78a498703cba1fcc52fd96750a2005d44f35d916df2b9cf6667815c11b395b0a32a57fd313cb865ccc200c1d1ebd74e51579b6f0095f4133b61e83c6aa84a62cb31b6e2952163ef5f0d56641bd5e99647f2c2a0c24275a758366b88e5ed0497d11791c8cf13af3de566df94ee8fd981eabbff87d13cfe4baecac06c0b41529418a65509ca94cb27d3d67dce05bbae2a241882c0f5e0a4dedb0c62e6544d15857f31f0e1f4dae60d9d5761e4bddf14e4dab3735aba16b2be1b837fbda6c95438137211cf459566ca8db330d554c29fc12bf6d06d48e93b1186573e2eb3ed6184acf008bc38e52a4d5fd7e7831a879cad544
+2024-07-28 20:27:37 [32minfo[39m : 9a6a511e99436f995d450f71eb3e09933ab100f4ae4ca8ba3863aed5d3050ffc5fa4c8d04808e2108272ec20fcbeef52062f30cfd00a51e5d333626de4b3107812496ca4eb8365ae3b04269110255f242c95f39b97749e55f9b8849613d4bd44ae5de892cd
+2024-07-28 20:27:37 [32minfo[39m : 625696e747b9bd9823d3c9975ad028a8594f259723557b1f18ddf085c8ddc53c1b79993c34f4b41e17fc7d516fc3331b58702f112a6783ae4881f0be8f03e0356dc808f06b659640ec7657f1a6834d3395310d94ab4417881ba43ca681af8573a173944cf471b3db6671bfeac6722bd324b323492b8e7250e40ded1a6f85275704311245f48dd2867bcbab6583c86a871b726aaceb8a1223735b3678506da392adc6aa15385a1ce03e2b4a68ceb63c4057ab179d09dca19f93d7c1fb14e4c5aaad189c0b7f2fbca396773b08ef66a6b35f881fdbf6311b25e9143f99ede60627524dc3eb152fc408c1e1e43dd1865632808a08289304410d3aee92705c4c2a0da9d1efa63dc053eaaeaa8db7e5a29a39105dc606276744ec94a3f0ac024b64777e35bb330b4e4674
+2024-07-28 20:28:05 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:28:06 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:28:06 [32minfo[39m : Listening on port 5001
+2024-07-28 20:28:13 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:28:16 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:28:17 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:28:17 [32minfo[39m : Listening on port 5001
+2024-07-28 20:28:25 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:28:26 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:28:26 [32minfo[39m : Listening on port 5001
+2024-07-28 20:28:51 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:28:52 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:28:52 [32minfo[39m : Listening on port 5001
+2024-07-28 20:29:17 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:29:18 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:29:18 [32minfo[39m : Listening on port 5001
+2024-07-28 20:30:52 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 20:30:53 [32minfo[39m : Database & tables created or updated!
+2024-07-28 20:30:53 [32minfo[39m : Listening on port 5001

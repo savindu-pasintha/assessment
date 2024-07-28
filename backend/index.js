@@ -23,14 +23,13 @@ app.get('/', (req, res) => {
   logger.info('Hello world endpoint was hit');
 });
 
-// 404 Handler
+
 app.use((req, res, next) => {
     res.status(404).send('Page not found');
     logger.error('404 - Page not found');
   });
   
-  // General Error Handler
-  app.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
     logger.error(`500 - ${err.message}`);
     res.status(500).send('Internal Server Error');
   });
@@ -38,6 +37,7 @@ app.use((req, res, next) => {
 let server;
 
 async function startServer() {
+
   try {
     await sequelize.authenticate(); // Ensure database connection
     logger.info('Database connection has been established successfully.');
@@ -48,7 +48,7 @@ async function startServer() {
     }).catch((error) => {
       logger.error('Unable to create or update the database:', error);
     });
-    
+
     const port = normalizePort(process.env.PORT || '5000');
     app.set('port', port);
 
