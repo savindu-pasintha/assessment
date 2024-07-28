@@ -34,7 +34,13 @@ import {
       case ADD_CAFE_REQUEST:
         return { ...state, loading: true, error: null };
       case ADD_CAFE_SUCCESS:
-        return { ...state, loading: false, cafes: [...state.cafes, action.payload] };
+        console.log(action.payload)
+        if(action.payload.status){
+          return { ...state, loading: false, cafes: [...state.cafes, action.payload.data] };
+        }else{
+          return { ...state, loading: false, cafes: [...state.cafes] };
+        }
+        
       case ADD_CAFE_FAILURE:
         return { ...state, loading: false, error: action.payload };
       case UPDATE_CAFE_REQUEST:

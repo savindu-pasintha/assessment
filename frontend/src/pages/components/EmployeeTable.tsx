@@ -29,25 +29,7 @@ const EmployeeTable = () => {
   const isOpen = useMemo(() => open, [open]);
 
   const rowData = useMemo(
-    () =>
-      employees || [
-        {
-          id: 1,
-          name: "John Doe",
-          email: "john.doe@example.com",
-          phone: "123-456-7890",
-          daysWorked: 30,
-          cafeName: "Cafe 1",
-        },
-        {
-          id: 2,
-          name: "Jane Smith",
-          email: "jane.smith@example.com",
-          phone: "098-765-4321",
-          daysWorked: 25,
-          cafeName: "Cafe 2",
-        },
-      ],
+    () => employees || [],
     [employees]
   );
 

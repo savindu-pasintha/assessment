@@ -57,11 +57,15 @@ router.get("/cafes", async (req, res) => {
   try {
     const location = req?.query?.location;
     const query = `
-    SELECT *
-    FROM cafeTables
-    WHERE location = :location
-    ORDER BY employees DESC;
+      SELECT c.*, COUNT(e.id) AS employeeCount
+      FROM Cafes c
+      LEFT JOIN Employments em ON c.id = em.CafeId
+      LEFT JOIN Employees e ON e.id = em.EmployeeId
+      WHERE c.location = :location
+      GROUP BY c.id
+      ORDER BY employeeCount DESC;
     `;
+
     await sequelize
       .query(query, {
         replacements: { location: location },
@@ -131,13 +135,13 @@ router.get("/cafes", async (req, res) => {
 router.get("/employees", async (req, res) => {
   try {
     const cafeName = req.query.cafe;
-    const query = `
-    SELECT e.*
-    FROM Employees e
-    INNER JOIN Employments em ON e.id = em.EmployeeId
-    INNER JOIN Cafes c ON c.id = em.CafeId
-    WHERE c.name = :cafeName
-  `;
+   const query = `
+      SELECT e.*, c.name AS cafe
+      FROM Employees e
+      INNER JOIN Employments em ON e.id = em.EmployeeId
+      INNER JOIN Cafes c ON c.id = em.CafeId
+      WHERE c.name = :cafeName
+    `;
     await sequelize
       .query(query, {
         replacements: { cafeName: cafeName },

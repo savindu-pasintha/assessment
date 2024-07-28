@@ -34,7 +34,11 @@ import {
       case ADD_EMPLOYEE_REQUEST:
         return { ...state, loading: true, error: null };
       case ADD_EMPLOYEE_SUCCESS:
-        return { ...state, loading: false, employees: [...state.employees, action.payload] };
+        if(action.payload.status){
+          return { ...state, loading: false, employees: [...state.employees, action.payload.data] };
+        }else{
+          return { ...state, loading: false, employees: [...state.employees] };
+        }
       case ADD_EMPLOYEE_FAILURE:
         return { ...state, loading: false, error: action.payload };
       case UPDATE_EMPLOYEE_REQUEST:

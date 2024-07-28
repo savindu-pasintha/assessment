@@ -28,25 +28,7 @@ const CafeTable = () => {
   const isOpen = useMemo(() => open, [open]);
 
   const rowData = useMemo(
-    () =>
-      cafes || [
-        {
-          logo: "logo1.png",
-          name: "Cafe 1",
-          description: "Description 1",
-          employees: 10,
-          location: "Location 1",
-          actions: "",
-        },
-        {
-          logo: "logo2.png",
-          name: "Cafe 2",
-          description: "Description 2",
-          employees: 20,
-          location: "Location 2",
-          actions: "",
-        },
-      ],
+    () => cafes || [],
     [cafes]
   );
 
@@ -60,7 +42,7 @@ const CafeTable = () => {
       },
       { headerName: "Name", field: "name", filter: true, editable: true },
       { headerName: "Description", field: "description", editable: true },
-      { headerName: "Employees", field: "employees", editable: true },
+      { headerName: "Employees", field: "employeeCount", editable: true },
       { headerName: "Location", field: "location", editable: true },
       {
         headerName: "Actions",
