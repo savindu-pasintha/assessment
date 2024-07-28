@@ -1,5 +1,15 @@
 import axiosInstance from './AxiosInstance';
 
+
+export const fetchAllCafes = async (location: any = '') => {
+  try {
+    return await axiosInstance.get('/all-cafes',{});
+  } catch (error) {
+    console.error('Error fetching allcafes:', error);
+    throw error;
+  }
+};
+
 export const fetchCafes = async (location: any = '') => {
   try {
     return await axiosInstance.get('/cafes', { params: { location } });

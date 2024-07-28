@@ -6,6 +6,57 @@ const { EmployeeTable, CafeTable, sequelize } = require("../db/index");
 const logger = require("../logger");
 const { v4: uuidv4 } = require('uuid');
 
+
+/**
+ * @swagger
+ * tags:
+ *   name: Cafes
+ *   description: Cafes operations
+ */
+
+/**
+ * @swagger
+ * /allcafes:
+ *   get:
+ *     tags: [AllCafes]
+ *     description: Get cafes by location
+ *     responses:
+ *       200:
+ *         description: List of cafes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     description: Cafe ID (UUID)
+ *                   name:
+ *                     type: string
+ *                     description: Cafe name
+ *                   description:
+ *                     type: string
+ *                     description: Cafe description
+ *                   logo:
+ *                     type: string
+ *                     description: Cafe logo URL
+ *                   location:
+ *                     type: string
+ *                     description: Cafe location
+ *                   employees:
+ *                     type: integer
+ *                     description: Number of employees
+ */
+router.get("/all-cafes", async (req, res) => {
+  try {
+    await CafeTable.findAll().then((data) => res.json(sample_success(data))).catch((err) => res.json(sample_error(err)));
+  } catch (e) {
+    res.json(sample_error(e));
+  }
+});
+
 /**
  * @swagger
  * tags:
@@ -73,15 +124,11 @@ router.get("/cafes", async (req, res) => {
         replacements: { location: location },
         type: sequelize.QueryTypes.SELECT,
       })
-      .then((data) => res.json(data))
+      .then((data) => res.json(sample_success(data)))
       .catch((err) => res.json(sample_error(err)));
     // await CafeTable.findAll({ where: { location: req?.query?.location } }).then((data) => res.json(data)).catch((err) => res.json(sample_error));
   } catch (e) {
     res.json(sample_error(e));
-    // res.json([
-    //   { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 ,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg"},
-    //   { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg" }
-    // ]);
   }
 });
 
@@ -154,10 +201,6 @@ router.get("/employees", async (req, res) => {
   } catch (e) {
     console.log("error", e.message);
     res.json(sample_error(e));
-    // res.json([
-    //   { id: 'UI1234567', name: 'John Doe', email_address: 'john@example.com', phone_number: '91234567', days_worked: 20, cafe: 'Cafe A' },
-    //   { id: 'UI7654321', name: 'Jane Smith', email_address: 'jane@example.com', phone_number: '81234567', days_worked: 15, cafe: 'Cafe B' }
-    // ]);
   }
 });
 
@@ -337,8 +380,8 @@ router.put("/employee", async (req, res) => {
  */
 router.delete("/cafe", async (req, res) => {
   try {
-    await CafeTable.destroy({ where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success(req.body)))
+    await CafeTable.destroy({ where: { id: req?.query.id } })
+      .then((data) => res.json(sample_success(req.query.id)))
       .catch((err) => res.json(sample_error(err)));
   } catch (e) {
     res.json(sample_error(e));
@@ -364,8 +407,8 @@ router.delete("/cafe", async (req, res) => {
  */
 router.delete("/employee", async (req, res) => {
   try {
-    await EmployeeTable.destroy({ where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success(req.body)))
+    await EmployeeTable.destroy({ where: { id: req?.query.id } })
+      .then((data) => res.json(sample_success(req.query.id)))
       .catch((err) => res.json(sample_error(err)));
   } catch (e) {
     res.json(sample_error(e));

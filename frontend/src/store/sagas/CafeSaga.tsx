@@ -1,11 +1,14 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {
+  FETCH_ALLCAFES_REQUEST,
   FETCH_CAFES_REQUEST,
   ADD_CAFE_REQUEST,
   UPDATE_CAFE_REQUEST,
   DELETE_CAFE_REQUEST,
 } from '../ActionTypes';
 import {
+  fetchAllCafesSuccess,
+  fetchAllCafesFailure,
   fetchCafesSuccess,
   fetchCafesFailure,
   addCafeSuccess,
@@ -16,11 +19,21 @@ import {
   deleteCafeFailure,
 } from '../actions/index';
 import {
+  fetchAllCafes,
   fetchCafes,
   addCafe,
   updateCafe,
   deleteCafe,
 } from '../../api/APIs'
+
+function* fetchAllCafesSaga(action: any) {
+  try {
+    const response = yield call(fetchAllCafes, action.payload);
+    yield put(fetchAllCafesSuccess(response.data));
+  } catch (error) {
+    yield put(fetchAllCafesFailure(error));
+  }
+}
 
 function* fetchCafesSaga(action: any) {
   try {
@@ -59,6 +72,7 @@ function* deleteCafeSaga(action: any) {
 }
 
 function* cafeSaga() {
+    yield takeLatest(FETCH_ALLCAFES_REQUEST, fetchAllCafesSaga);
     yield takeLatest(FETCH_CAFES_REQUEST, fetchCafesSaga);
     yield takeLatest(ADD_CAFE_REQUEST, addCafeSaga);
     yield takeLatest(UPDATE_CAFE_REQUEST, updateCafeSaga);

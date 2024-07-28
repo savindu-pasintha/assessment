@@ -48,7 +48,7 @@ import {
           ...state,
           loading: false,
           employees: state.employees.map(employee =>
-            employee.id === action.payload.id ? action.payload : employee
+            employee.id === action.payload.data.id ? action.payload : employee
           ),
         };
       case UPDATE_EMPLOYEE_FAILURE:
@@ -59,7 +59,7 @@ import {
         return {
           ...state,
           loading: false,
-          employees: state.employees.filter(employee => employee.id !== action.payload.id),
+          employees: state.employees.filter(employee => employee.id !== action.payload.data),
         };
       case DELETE_EMPLOYEE_FAILURE:
         return { ...state, loading: false, error: action.payload };

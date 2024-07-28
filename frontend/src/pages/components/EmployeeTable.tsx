@@ -12,14 +12,22 @@ import {
   addEmployeeRequest,
   updateEmployeeRequest,
   deleteEmployeeRequest,
+  fetchAllCafesRequest,
 } from "../../store/actions";
 import { AlertDialog } from "./AlertDialog";
 import EmployeeForm from "./Forms/EmployeeForm";
+import { useLocation } from "react-router";
+
+
+const useQuery = () =>{
+  return new URLSearchParams(useLocation().search);
+}
 
 const EmployeeTable = () => {
-  const { employees :{employees},cafes:{cafes} } = useSelector((state: { employees: any,cafes:any }) => state);
+  const { employees :{employees},cafes:{cafes,allCafes}} = useSelector((state: { employees: any,cafes:any}) => state);
   
   const dispatch = useDispatch();
+  const query = useQuery();
 
   const [clickedCount, setClickedCount] = useState(0);
 
@@ -40,7 +48,7 @@ const EmployeeTable = () => {
       { headerName: "Email Address", field: "email_address", editable: true },
       { headerName: "Phone Number", field: "phone_number", editable: true },
       { headerName: "Days Worked", field: "days_worked", editable: true },
-      { headerName: "Café Name", field: "cafe", editable: true },
+      { headerName: "Café Name", field: "cafeName", editable: true },
       {
         headerName: "Actions",
         field: "actions",
@@ -78,8 +86,8 @@ const EmployeeTable = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchEmployeesRequest("cafe1"));
-  }, []);
+    dispatch(fetchEmployeesRequest(query.get('cafe')??"cafe1"));
+  }, [query.get('cafe')]);
 
   return (
     <Container maxWidth="lg">
@@ -105,7 +113,7 @@ const EmployeeTable = () => {
           FormComponent={
             <EmployeeForm
               employeeData={{}}
-              cafes={cafes}
+              cafes={allCafes}
               onSubmit={(data:any) => {
                 dispatch(
                   addEmployeeRequest(data)

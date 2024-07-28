@@ -16,10 +16,19 @@ import {
 } from "../../store/actions";
 import { AlertDialog } from "./AlertDialog";
 import CafeForm from "./Forms/CafeForm";
+import { useLocation } from 'react-router-dom';
+
+
+const useQuery = () =>{
+  return new URLSearchParams(useLocation().search);
+}
 
 const CafeTable = () => {
   const { cafes } = useSelector((state: { cafes: any }) => state.cafes);
   const dispatch = useDispatch();
+
+  const query = useQuery();
+
   const [clickedCount, setClickedCount] = useState(0);
 
   const [open, setOpen] = useState(false);
@@ -80,8 +89,8 @@ const CafeTable = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchCafesRequest("singapore"));
-  }, []);
+    dispatch(fetchCafesRequest(query.get('location')??"singapore"));
+  }, [query.get('location')]);
 
   return (
     <Container maxWidth="lg">

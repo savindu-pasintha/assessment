@@ -23,9 +23,9 @@ export const AlertDialog = (props: any) => {
        </DialogTitle>
         <DialogContent>
           { id && <DialogContentText id="alert-dialog-description">Id = {id && id} </DialogContentText>}
-          {formType && FormComponent}
+          { !id && formType && FormComponent}
        </DialogContent>
-       { id && <DialogActions>
+         { id && <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleDelete} autoFocus>
             Delete

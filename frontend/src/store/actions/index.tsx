@@ -1,4 +1,7 @@
 import {
+  FETCH_ALLCAFES_REQUEST,
+  FETCH_ALLCAFES_SUCCESS,
+  FETCH_ALLCAFES_FAILURE,
   FETCH_CAFES_REQUEST,
   FETCH_CAFES_SUCCESS,
   FETCH_CAFES_FAILURE,
@@ -24,6 +27,22 @@ import {
   DELETE_EMPLOYEE_SUCCESS,
   DELETE_EMPLOYEE_FAILURE,
 } from '../ActionTypes';
+
+
+export const fetchAllCafesRequest = (location: any) => ({
+  type: FETCH_ALLCAFES_REQUEST,
+  payload: location,
+});
+
+export const fetchAllCafesSuccess = (data: any) => ({
+  type: FETCH_ALLCAFES_SUCCESS,
+  payload: data,
+});
+
+export const fetchAllCafesFailure = (error: any) => ({
+  type: FETCH_ALLCAFES_FAILURE,
+  payload: error,
+});
 
 export const fetchCafesRequest = (location: any) => ({
   type: FETCH_CAFES_REQUEST,

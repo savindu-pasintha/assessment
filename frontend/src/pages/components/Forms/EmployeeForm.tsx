@@ -134,7 +134,7 @@ const EmployeeForm = (props: any) => {
           fullWidth
           variant="outlined"
         >
-          <MenuItem value="">None</MenuItem>
+          {cafes && cafes.length == 0 && <MenuItem value="">None</MenuItem>}
           {cafes.map((cafe: any) => (
             <MenuItem key={cafe.id} value={cafe.id}>
               {cafe.name}
