@@ -1,15 +1,12 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../sequalizeDB')
 
-const employeeTable = sequelize.define('Employee', {
+const employeeTable = sequelize.define('Employees', {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       primaryKey: true,
-      unique: true,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
-      validate: {
-        is: /^UI[0-9A-Za-z]{7}$/,
-      },
     },
     name: {
       type: DataTypes.STRING,

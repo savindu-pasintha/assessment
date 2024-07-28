@@ -48,7 +48,9 @@ const CafeForm = (props:any) => {
   const handleSubmit = (e:any) => {
     e.preventDefault();
     if (validate()) {
-      onSubmit(formData);
+      let tformData : any = formData
+      tformData.logo = 'https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg'
+      onSubmit(tformData);
     }
   };
 

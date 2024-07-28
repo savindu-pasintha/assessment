@@ -1,9 +1,10 @@
 require('dotenv').config()
 const express = require("express");
 const router = express.Router();
-const {sample_error,sample_success} = require("../utilities");
+const {sample_error,sample_success,UUIDV4,timestamp} = require("../utilities");
 const { EmployeeTable, CafeTable, sequelize } = require("../db/index");
 const logger = require("../logger");
+const { v4: uuidv4 } = require('uuid');
 
 /**
  * @swagger
@@ -73,10 +74,10 @@ router.get("/cafes", async (req, res) => {
         type: sequelize.QueryTypes.SELECT,
       })
       .then((data) => res.json(data))
-      .catch((err) => res.json(sample_error));
+      .catch((err) => res.json(sample_error(err)));
     // await CafeTable.findAll({ where: { location: req?.query?.location } }).then((data) => res.json(data)).catch((err) => res.json(sample_error));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
     // res.json([
     //   { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 ,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg"},
     //   { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg" }
@@ -149,10 +150,10 @@ router.get("/employees", async (req, res) => {
         type: sequelize.QueryTypes.SELECT,
       })
       .then((data) => res.json(data))
-      .catch((err) => res.json(sample_error));
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
     console.log("error", e.message);
-    res.json(sample_error);
+    res.json(sample_error(e));
     // res.json([
     //   { id: 'UI1234567', name: 'John Doe', email_address: 'john@example.com', phone_number: '91234567', days_worked: 20, cafe: 'Cafe A' },
     //   { id: 'UI7654321', name: 'Jane Smith', email_address: 'jane@example.com', phone_number: '81234567', days_worked: 15, cafe: 'Cafe B' }
@@ -187,11 +188,15 @@ router.get("/employees", async (req, res) => {
  */
 router.post("/cafe", async (req, res) => {
   try {
-    await CafeTable.create(req?.body)
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+  req.body.id = uuidv4()
+  req.body.createdAt = timestamp
+  req.body.updatedAt = req.body.createdAt
+  await CafeTable.create(req?.body)
+      .then((data) => {
+        res.json(sample_success(req.body));})
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 
@@ -226,11 +231,14 @@ router.post("/cafe", async (req, res) => {
  */
 router.post("/employee", async (req, res) => {
   try {
-    await EmployeeTable.create(req?.body)
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+  req.body.id = uuidv4()
+  req.body.createdAt = timestamp
+  req.body.updatedAt = req.body.createdAt
+  await EmployeeTable.create(req?.body)
+      .then((data) => res.json(sample_success(req.body)))
+      .catch((err) => sample_error(err));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 
@@ -264,10 +272,10 @@ router.post("/employee", async (req, res) => {
 router.put("/cafe", async (req, res) => {
   try {
     await CafeTable.update(req?.body, { where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+      .then((data) => res.json(sample_success(req.body)))
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 
@@ -303,10 +311,10 @@ router.put("/cafe", async (req, res) => {
 router.put("/employee", async (req, res) => {
   try {
     await EmployeeTable.update(req?.body, { where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+      .then((data) => res.json(sample_success(req.body)))
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 
@@ -330,10 +338,10 @@ router.put("/employee", async (req, res) => {
 router.delete("/cafe", async (req, res) => {
   try {
     await CafeTable.destroy({ where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+      .then((data) => res.json(sample_success(req.body)))
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 
@@ -357,10 +365,10 @@ router.delete("/cafe", async (req, res) => {
 router.delete("/employee", async (req, res) => {
   try {
     await EmployeeTable.destroy({ where: { id: req?.body.id } })
-      .then((data) => res.json(sample_success))
-      .catch((err) => res.json(sample_error));
+      .then((data) => res.json(sample_success(req.body)))
+      .catch((err) => res.json(sample_error(err)));
   } catch (e) {
-    res.json(sample_error);
+    res.json(sample_error(e));
   }
 });
 

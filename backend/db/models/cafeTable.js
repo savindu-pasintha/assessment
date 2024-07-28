@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../sequalizeDB')
 
-const cafeTable = sequelize.define('Cafe', {
+const cafeTable = sequelize.define('Cafes', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
