@@ -194,3 +194,59 @@
 2024-07-28 14:19:44 [32minfo[39m : Database connection has been established successfully.
 2024-07-28 14:19:45 [32minfo[39m : Database & tables created or updated!
 2024-07-28 14:19:45 [32minfo[39m : Listening on port 5001
+2024-07-28 14:27:04 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:27:05 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:27:05 [32minfo[39m : Listening on port 5001
+2024-07-28 14:28:04 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:28:05 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:28:05 [32minfo[39m : Listening on port 5001
+2024-07-28 14:28:22 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:28:23 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:28:23 [32minfo[39m : Listening on port 5001
+2024-07-28 14:32:05 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:32:06 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:32:06 [32minfo[39m : Listening on port 5001
+2024-07-28 14:32:40 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:32:41 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:32:41 [32minfo[39m : Listening on port 5001
+2024-07-28 14:33:34 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:33:37 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:33:38 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:33:38 [32minfo[39m : Listening on port 5001
+2024-07-28 14:38:01 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:38:02 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:38:02 [32minfo[39m : Listening on port 5001
+2024-07-28 14:38:07 [31merror[39m : Unknown column 'Employee.cafe' in 'where clause'
+2024-07-28 14:45:08 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:45:09 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:45:09 [32minfo[39m : Listening on port 5001
+2024-07-28 14:46:48 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:46:49 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:46:49 [32minfo[39m : Listening on port 5001
+2024-07-28 14:47:24 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:47:25 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:47:25 [32minfo[39m : Listening on port 5001
+2024-07-28 14:48:17 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:48:18 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:48:18 [32minfo[39m : Listening on port 5001
+2024-07-28 14:48:54 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:48:55 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:48:55 [32minfo[39m : Listening on port 5001
+2024-07-28 14:50:13 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:50:14 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:50:14 [32minfo[39m : Listening on port 5001
+2024-07-28 14:51:17 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:51:18 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:51:18 [32minfo[39m : Listening on port 5001
+2024-07-28 14:52:21 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 14:52:22 [32minfo[39m : Database & tables created or updated!
+2024-07-28 14:52:22 [32minfo[39m : Listening on port 5001
+2024-07-28 15:04:13 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 15:04:14 [32minfo[39m : Database & tables created or updated!
+2024-07-28 15:04:14 [32minfo[39m : Listening on port 5001
+2024-07-28 15:05:26 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 15:05:27 [32minfo[39m : Database & tables created or updated!
+2024-07-28 15:05:27 [32minfo[39m : Listening on port 5001
+2024-07-28 15:06:42 [32minfo[39m : Database connection has been established successfully.
+2024-07-28 15:06:43 [32minfo[39m : Database & tables created or updated!
+2024-07-28 15:06:43 [32minfo[39m : Listening on port 5001
