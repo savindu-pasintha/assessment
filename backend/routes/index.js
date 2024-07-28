@@ -1,5 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const {sample_error,sample_success} = require("../utilities")
+const {
+  EmployeeTable,
+  CafeTable,
+  EmploymentTable,
+} = require('../db/index')
 
 /**
  * @swagger
@@ -51,11 +57,15 @@ const router = express.Router();
  *                     description: Number of employees
  */
 router.get('/cafes', (req, res) => {
-  // Mock response
-  res.json([
-    { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 ,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg"},
-    { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg" }
-  ]);
+  try{
+    CafeTable.findAll({where:{location: req?.query?.location}}).then((data)=>res.json(data)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+    // res.json([
+    //   { id: 'uuid-1', name: 'Cafe A', description: 'Description A', location: 'Location A', employees: 10 ,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg"},
+    //   { id: 'uuid-2', name: 'Cafe B', description: 'Description B', location: 'Location B', employees: 5,logo:"https://cdn.pixabay.com/photo/2022/11/14/10/37/chinese-lanterns-7591296_640.jpg" }
+    // ]);
+  }
 });
 
 /**
@@ -108,11 +118,15 @@ router.get('/cafes', (req, res) => {
  *                     description: Cafe name
  */
 router.get('/employees', (req, res) => {
-  // Mock response
-  res.json([
-    { id: 'UI1234567', name: 'John Doe', email_address: 'john@example.com', phone_number: '91234567', days_worked: 20, cafe: 'Cafe A' },
-    { id: 'UI7654321', name: 'Jane Smith', email_address: 'jane@example.com', phone_number: '81234567', days_worked: 15, cafe: 'Cafe B' }
-  ]);
+  try{
+    EmployeeTable.findAll({where:{cafe: req?.query?.cafe}}).then((data)=>res.json(data)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+    // res.json([
+    //   { id: 'UI1234567', name: 'John Doe', email_address: 'john@example.com', phone_number: '91234567', days_worked: 20, cafe: 'Cafe A' },
+    //   { id: 'UI7654321', name: 'Jane Smith', email_address: 'jane@example.com', phone_number: '81234567', days_worked: 15, cafe: 'Cafe B' }
+    // ]);
+  }
 });
 
 /**
@@ -141,8 +155,11 @@ router.get('/employees', (req, res) => {
  *         description: Café created
  */
 router.post('/cafe', (req, res) => {
-  // Mock response
-  res.status(201).send('Cafe created');
+  try{
+    CafeTable.create(req?.body).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 /**
@@ -175,8 +192,11 @@ router.post('/cafe', (req, res) => {
  *         description: Employee created
  */
 router.post('/employee', (req, res) => {
-  // Mock response
-  res.status(201).send('Employee created');
+  try{
+    EmployeeTable.create(req?.body).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 /**
@@ -207,8 +227,11 @@ router.post('/employee', (req, res) => {
  *         description: Café updated
  */
 router.put('/cafe', (req, res) => {
-  // Mock response
-  res.send('Cafe updated');
+  try{
+    CafeTable.update(req?.body,{where:{id:req?.body.id}}).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 /**
@@ -241,8 +264,11 @@ router.put('/cafe', (req, res) => {
  *         description: Employee updated
  */
 router.put('/employee', (req, res) => {
-  // Mock response
-  res.send('Employee updated');
+  try{
+    EmployeeTable.update(req?.body,{where:{id:req?.body.id}}).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 /**
@@ -263,8 +289,11 @@ router.put('/employee', (req, res) => {
  *         description: Café deleted
  */
 router.delete('/cafe', (req, res) => {
-  // Mock response
-  res.send('Cafe deleted');
+  try{
+    CafeTable.destroy({where:{id:req?.body.id}}).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 /**
@@ -285,8 +314,11 @@ router.delete('/cafe', (req, res) => {
  *         description: Employee deleted
  */
 router.delete('/employee', (req, res) => {
-  // Mock response
-  res.send('Employee deleted');
+  try{
+    EmployeeTable.destroy({where:{id:req?.body.id}}).then((data)=>res.json(sample_success)).catch((err)=>res.json(sample_error))
+  }catch(e){
+    res.json(sample_error)
+  }
 });
 
 module.exports = router;

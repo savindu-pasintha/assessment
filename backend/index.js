@@ -5,7 +5,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { swaggerMiddleware, swaggerDocs } = require('./swagger');
 const logger = require('./logger');
-const sequelize = require('./sequalizeDB');
+const {sequelize} = require('./db/index');
 const routes = require('./routes');
 
 const app = express();
@@ -39,13 +39,17 @@ let server;
 
 async function startServer() {
   try {
-    // await sequelize.authenticate(); // Ensure database connection
+    await sequelize.authenticate(); // Ensure database connection
     logger.info('Database connection has been established successfully.');
 
     // Optionally sync models
-    // await sequelize.sync();
-
-    const port = normalizePort(process.env.PORT || '3000');
+    await sequelize.sync({ force: false }).then(() => {
+      logger.info('Database & tables created or updated!');
+    }).catch((error) => {
+      logger.error('Unable to create or update the database:', error);
+    });
+    
+    const port = normalizePort(process.env.PORT || '5000');
     app.set('port', port);
 
     server = http.createServer(app);
