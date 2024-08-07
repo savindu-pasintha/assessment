@@ -5,3 +5,4 @@ backend/node_modules
 backend/combined.log
 
 .DS_Store
+/backend/.DS_Store

@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const router = express.Router();
 const {sample_error,sample_success,UUIDV4,timestamp} = require("../utilities");
-const { EmployeeTable, CafeTable, sequelize } = require("../db/index");
+const { EmployeeTable, CafeTable, EmploymentTable, sequelize } = require("../db/index");
 const logger = require("../logger");
 const { v4: uuidv4 } = require('uuid');
 
@@ -277,10 +277,21 @@ router.post("/employee", async (req, res) => {
   req.body.id = uuidv4()
   req.body.createdAt = timestamp
   req.body.updatedAt = req.body.createdAt
-  await EmployeeTable.create(req?.body)
-      .then((data) => res.json(sample_success(req.body)))
-      .catch((err) => sample_error(err));
-  } catch (e) {
+  await EmployeeTable.create(req.body)
+    .then(employeeData => {
+      req.body.start_date = req.body.createdAt
+      req.body.EmployeeId = req.body.id
+      req.body.CafeId = req.body.cafe
+      return  EmploymentTable.create(req.body);
+    })
+    .then(employmentData => {
+      res.json(sample_success(employmentData));
+    })
+    .catch(err => {
+      res.json(sample_error(err));
+    });
+
+  }catch (e) {
     res.json(sample_error(e));
   }
 });
