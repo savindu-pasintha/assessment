@@ -17,7 +17,7 @@ import {
 import { AlertDialog } from "./AlertDialog";
 import EmployeeForm from "./Forms/EmployeeForm";
 import { useLocation } from "react-router";
-
+import {calculateDaysWorked} from '../../utilities/index'
 
 const useQuery = () =>{
   return new URLSearchParams(useLocation().search);
@@ -37,7 +37,11 @@ const EmployeeTable = () => {
   const isOpen = useMemo(() => open, [open]);
 
   const rowData = useMemo(
-    () => employees || [],
+    () => {
+      // employees.days_worked = calculateDaysWorked(employees.createdAt)
+      var x = employees.map((itm:any)=> {itm.days_worked = calculateDaysWorked(employees.createdAt); return itm;}) || []
+      console.log(x)
+      return employees.map((itm:any)=> {itm.days_worked = calculateDaysWorked(itm.createdAt); return itm;}) || []},
     [employees]
   );
 
@@ -48,7 +52,7 @@ const EmployeeTable = () => {
       { headerName: "Email Address", field: "email_address", editable: true },
       { headerName: "Phone Number", field: "phone_number", editable: true },
       { headerName: "Days Worked", field: "days_worked", editable: true },
-      { headerName: "Café Name", field: "cafeName", editable: true },
+      { headerName: "Café Name", field: "cafe", editable: true },
       {
         headerName: "Actions",
         field: "actions",
