@@ -34,9 +34,8 @@ const Navigation: React.FC = () => {
         >
           <Typography variant="h6">Cafes & Employees</Typography>
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box>
-              <Button color="inherit">Cafes</Button>
               <Selector
+                title="Cafes"
                 cafes={allCafes}
                 type="location"
                 handleInputChange={(e: any) => {
@@ -46,12 +45,8 @@ const Navigation: React.FC = () => {
                 }}
                 value={v}
               />
-            </Box>
-            <Box>
-              <Button color="inherit">
-                Employees
-              </Button>
               <Selector
+              title="Employees"
                 cafes={allCafes}
                 type="name"
                 handleInputChange={(e: any) => {
@@ -61,7 +56,6 @@ const Navigation: React.FC = () => {
                 }}
                 value={v}
               />
-            </Box>
           </Box>
         </Container>
       </Toolbar>
